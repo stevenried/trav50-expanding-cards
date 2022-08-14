@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 *,
 *::before,
@@ -7,12 +7,89 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Muli', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 3.125rem;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 0.6rem;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 35px;
+  left: 25px;
+  margin: 0;
+}
+
+.photo-credit {
+  font-size: 0.6rem;
+  position: absolute;
+  bottom: 5px;
+  left: 25px;
+}
+
+.panel h3,
+.photo-credit {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.photo-credit a {
+  color: #fff;
+}
+
+.color-gray {
+  color: #777;
+}
+
+.color-gray a {
+  color: #888;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3,
+.panel.active .photo-credit {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-last-of-type(1),
+  .panel:nth-last-of-type(2) {
+    display: none;
+  }
+}
+
+.test {
+  visibility: hidden;
 }
