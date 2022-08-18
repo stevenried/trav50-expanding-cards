@@ -88,8 +88,17 @@ body {
   .panel:nth-last-of-type(2) {
     display: none;
   }
+
+  .color-gray {
+    color: #fff;
+  }
 }
 
-.test {
-  visibility: hidden;
+@media (max-width: 690px) {
+  .panel.active h3,
+  .panel.active .photo-credit {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 0.4s ease-in 0.5s;
+  }
 }
